@@ -106,7 +106,7 @@ insecure=port,invite\n"\
 
 # Define extension in dialplan
 RUN printf "\n\
-[agiphlow-phapgi]\n\
+[agiphlow-phpagi]\n\
 exten => 100, 1, AGI(/phpagi/agi.php)\n\
 same  =>      n, Hangup()\n"\
 >> /etc/asterisk/extensions.conf
@@ -123,7 +123,7 @@ Now, let's create an AGI script using `agiphlow/phpagi`. Create the file `agi.ph
 
 ```php
 <?php
-
+#!/usr/bin/env php
 require_once __DIR__ .'/vendor/autoload.php';
 
 use Agiphlow/PhpAgi/Agi;
@@ -143,6 +143,12 @@ $agi->stream_file('hello-world');
 // hangup
 $agi->hangup();
 
+```
+
+Make sure the script is executable:
+
+```sh
+chmod +x agi.php
 ```
 
 ## Run docker container
