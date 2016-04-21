@@ -122,11 +122,11 @@ docker build --tag phpagi-dev .
 Now, let's create an AGI script using `agiphlow/phpagi`. Create the file `agi.php` with the following content:
 
 ```php
-<?php
 #!/usr/bin/env php
+<?php
 require_once __DIR__ .'/vendor/autoload.php';
 
-use Agiphlow/PhpAgi/Agi;
+use Agiphlow\PhpAgi\Agi;
 
 // turn on debugging
 $agi = new Agi(array(
