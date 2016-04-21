@@ -153,7 +153,7 @@ $agi->hangup();
 docker run \
   --name phpagi-test \
   --net=host \
-  -v `pwd`:/phpagi
+  -v `pwd`:/phpagi \
   -d -t phpagi-dev
 ```
 
